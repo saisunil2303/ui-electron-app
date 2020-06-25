@@ -47,7 +47,7 @@ jobs:
       script: skip
       before_deploy:
         # retrieving latest package json from master for version number
-        - git fetch 
+        - git pull origin master 
         - git merge origin/master
       deploy:
         provider: script
@@ -61,9 +61,23 @@ jobs:
       script: skip
       before_deploy:
         # retrieving latest package json from master for version number
-        - git fetch 
+        - git pull origin master 
         - git merge origin/master
       deploy:
         provider: script
         skip_cleanup: true
         script: lsc build electron --platform=windows
+    - stage: electron deployment
+      if: branch = master
+      os: linux
+      language: node_js
+      node_js: lts/*
+      script: skip
+      before_deploy:
+        # retrieving latest package json from master for version number
+        - git pull origin master 
+        - git merge origin/master
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: lsc build electron --platform=linux
