@@ -154,7 +154,7 @@
                     "path": "/Applications"
                   }
                 ],
-                "sign":false
+                "sign":true
               },
               "mac":{
                 "target": "dmg"

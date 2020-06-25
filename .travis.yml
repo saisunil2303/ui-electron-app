@@ -3,7 +3,6 @@ os:
   - linux
 node_js:
   - lts/*
-  - node
 sudo: required
 addons:
   chrome: stable
@@ -29,8 +28,6 @@ branches:
   except:
     - /^v\d+\.\d+\.\d+$/
 jobs:
-  allow_failures:
-    - node_js: node
   include:
     - stage: release
       if: branch = master
