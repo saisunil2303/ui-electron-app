@@ -141,10 +141,32 @@
             "plaform": "mac",
             "baseHref": "./",
             "electronBuilder":{
+              "dmg": {
+                "contents": [
+                  {
+                    "x": 110,
+                    "y": 150
+                  },
+                  {
+                    "x": 240,
+                    "y": 150,
+                    "type": "link",
+                    "path": "/Applications"
+                  }
+                ],
+                "sign":false
+              },
+              "mac":{
+                "target": "dmg"
+              },
+              "win":{
+                "target":"msi"
+              },
               "publish": [{
                 "provider": "github",
                 "owner": "jamilomar",
-                "repo": "ui-electron-app"}]
+                "repo": "ui-electron-app",
+                "releaseType" : "release"}]
             },
             "publish" : "always"
           }
