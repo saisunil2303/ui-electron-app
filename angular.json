@@ -160,9 +160,6 @@
               "mac":{
                 "target": "dmg"
               },
-              "win":{
-                "target":"msi"
-              },
               "publish": [{
                 "provider": "github",
                 "owner": "jamilomar",
