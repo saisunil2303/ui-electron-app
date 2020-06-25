@@ -1,3 +1,11 @@
+## [1.2.4](https://github.com/jamilomar/ui-electron-app/compare/v1.2.3...v1.2.4) (2020-06-25)
+
+
+### Bug Fixes
+
+* removed version ([e096ba6](https://github.com/jamilomar/ui-electron-app/commit/e096ba692d6a802278342993be78f3a74fa44863))
+* removed win ([2c8cd72](https://github.com/jamilomar/ui-electron-app/commit/2c8cd727405ecd548d52012fc698f244b48454c0))
+
 ## [1.2.3](https://github.com/jamilomar/ui-electron-app/compare/v1.2.2...v1.2.3) (2020-06-25)
 
 
