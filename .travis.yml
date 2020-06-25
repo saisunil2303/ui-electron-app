@@ -2,6 +2,7 @@ language: node_js
 os:
   - linux
 node_js:
+  - node 
   - lts/*
 sudo: required
 addons:
@@ -47,8 +48,8 @@ jobs:
       script: skip
       before_deploy:
         # retrieving latest package json from master for version number
-        - git pull origin master 
-        - git merge origin/master
+        # - git pull origin master 
+        # - git merge origin/master
       deploy:
         provider: script
         skip_cleanup: true
@@ -61,8 +62,8 @@ jobs:
       script: skip
       before_deploy:
         # retrieving latest package json from master for version number
-        - git pull origin master 
-        - git merge origin/master
+        # - git pull origin master 
+        # - git merge origin/master
       deploy:
         provider: script
         skip_cleanup: true
@@ -75,8 +76,8 @@ jobs:
       script: skip
       before_deploy:
         # retrieving latest package json from master for version number
-        - git pull origin master 
-        - git merge origin/master
+        # - git pull origin master 
+        # - git merge origin/master
       deploy:
         provider: script
         skip_cleanup: true
