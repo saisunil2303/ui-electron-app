@@ -141,14 +141,12 @@
             "plaform": "mac",
             "baseHref": "./",
             "electronBuilder":{
-      
               "publish": [{
                 "provider": "github",
                 "owner": "jamilomar",
                 "repo": "ui-electron-app"}]
             },
-          
-            "main":"electron-main.js"
+            "publish" : "always"
           }
         },
         "pack-cordova": {
