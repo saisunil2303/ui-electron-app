@@ -1,7 +1,7 @@
 {
   "name": "ui-app-04",
-  "version": "0.0.0-development",
-  "description": "",
+  "version": "1.0.2",
+  "description": "This is a test application",
   "scripts": {
     "ng": "ng",
     "start": "lsc start site",
