@@ -38,23 +38,31 @@ jobs:
         skip_cleanup: true
         script:
           - npm run semantic-release
-    - stage: electron deployment mac
+    - stage: electron deployment
       if: branch = master
       os: osx
       osx_image: xcode7.2
       language: node_js
       node_js: lts/*
       script: skip
+      before_deploy:
+        # retrieving latest package json from master for version number
+        - git fetch 
+        - git merge origin/master
       deploy:
         provider: script
         skip_cleanup: true
         script: lsc build electron --platform=mac
-    - stage: electron deployment windows
+    - stage: electron deployment
       if: branch = master
       os: win
       language: node_js
       node_js: lts/*
       script: skip
+      before_deploy:
+        # retrieving latest package json from master for version number
+        - git fetch 
+        - git merge origin/master
       deploy:
         provider: script
         skip_cleanup: true
