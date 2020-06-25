@@ -32,6 +32,15 @@ jobs:
   allow_failures:
     - node_js: node
   include:
+    - stage: release
+      if: branch = master
+      node_js: lts/*
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npm run semantic-release
     - stage: electron deployment mac
       if: branch = master
       os: osx
