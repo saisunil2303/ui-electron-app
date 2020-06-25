@@ -1,6 +1,6 @@
 {
   "name": "ui-app-04",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "This is a test application",
   "scripts": {
     "ng": "ng",
