@@ -33,12 +33,17 @@ jobs:
     - stage: release
       if: branch = master
       node_js: lts/*
-      script: skip
+      script: cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]' > build_version.txt
       deploy:
         provider: script
         skip_cleanup: true
         script:
           - npm run semantic-release
+      workspaces:
+        create:
+          name: build_version
+          paths:
+            - build_version.txt
     - stage: electron deployment
       if: branch = master
       os: osx
@@ -54,6 +59,10 @@ jobs:
         provider: script
         skip_cleanup: true
         script: lsc build electron --platform=mac
+      workspaces:
+        use: build_version 
+      script:
+        - cat build_version.txt || true
     - stage: electron deployment
       if: branch = master
       os: win
@@ -68,3 +77,7 @@ jobs:
         provider: script
         skip_cleanup: true
         script: lsc build electron --platform=windows
+      workspaces:
+        use: build_version 
+      script:
+        - cat build_version.txt || true
